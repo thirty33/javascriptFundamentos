@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Jav</title>
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+	<h1>Hola mundo</h1>
+	
+
+	<script>
+		
+
+	
+
+	// const crearPelicula = (name, ageLimit, asWithAdult=false) => {
+	// 	var pelicula = {
+	// 		name: name,
+	// 		limite: ageLimit,
+	// 		company: asWithAdult,
+	// 	}
+
+	// 	return pelicula
+	// }
+
+	// const crearPersona = (name, age) => {
+	// 	var persona = {
+	// 		name: name,
+	// 		age: age,
+	// 	}
+
+	// 	return persona
+	// }
+
+	// const puedeEntrar = (persona, pelicula) => {
+
+	// 	if(persona.age < pelicula.limite && pelicula.company == false) {
+			
+	// 		return false
+	// 	}
+
+	// 	else {
+			
+	// 		return true
+	// 	}
+
+	// }
+
+	// const confirmar = (persona, pelicula) => {
+	// 	if(puedeEntrar(persona, pelicula ) == true) {
+	// 		console.log(`la persona: ${persona.name} de edad: ${persona.age} puede entrar a: ${pelicula.name}`)
+	// 	}
+	// 	else if(puedeEntrar(persona, transformers) == false){
+			
+	// 		console.log(`la persona: ${persona.name} de edad: ${persona.age} no puede entrar a: ${pelicula.name}`)
+	// 	}
+		
+	// }
+
+	// const transformers = crearPelicula('transformers', 14, false)
+	// const fiftyShadows = crearPelicula('50 sombras de grey', 18, false)
+	// const mickyMouse = crearPelicula('mickyMouse', 13, true)
+
+
+	// const Laddy = crearPersona('laddy', 8)
+	// const Carlos = crearPersona('Carlos', 13)
+
+	// console.log(confirmar(Carlos, transformers))
+	// console.log(confirmar(Laddy, fiftyShadows))
+	// console.log(confirmar(Laddy, mickyMouse))
+
+
+	// inventando idiomas 
+
+	function platzoom(str) {
+		let translation = str
+
+		translation = translation.toLowerCase().endsWith('ar') ? translation.slice(0,-2) : translation 
+
+		translation = translation.toLowerCase().startsWith('z') ? `${translation}pe` : translation
+
+		
+
+		// si tiene 10 o mas letras se debe partir a la mitad y unir con un guion en el medio
+
+		const length = translation.length
+		const half = Math.round(length/2)
+
+		translation = length >= 10 ? `${translation.slice(0,half)} - ${translation.slice(half)}}` : translation 
+
+
+		const reverse = str => str.toLowerCase().split('').reverse().join('')
+		const minMay = str => str.split('').map(c => str.indexOf(c) % 2 == 0 ? c.toUpperCase() : c.toLowerCase()).join('')
+
+		translation = str == reverse(str) ? minMay(str) : translation
+
+		return translation
+		
+	}
+
+	console.log(platzoom('programar'))
+	console.log(platzoom('Zorro'))
+	console.log(platzoom('jijijijiji'))
+	console.log(platzoom('arepera'))
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>
