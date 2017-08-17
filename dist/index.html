@@ -314,28 +314,42 @@
 
 	
 
-	class persona {
-		constructor (nombre, edad){
-			this.nombre = nombre
-			this.edad = edad
-		}
+	// class persona {
+	// 	constructor (nombre, edad){
+	// 		this.nombre = nombre
+	// 		this.edad = edad
+	// 	}
 
-	}
+	// }
 
-	const carlos = new persona('carlos', 14)
-	const maria = new persona('maria', 17)
-	const juana = new persona('juana', 20)
+	// const carlos = new persona('carlos', 14)
+	// const maria = new persona('maria', 17)
+	// const juana = new persona('juana', 20)
 	
 
-	const personas = new Array()
+	// const personas = new Array()
 
-	personas.push(carlos)
-	personas.push(maria)
-	personas.push(juana)
+	// personas.push(carlos)
+	// personas.push(maria)
+	// personas.push(juana)
 
-	const imprimirArray = (array)=>array.map(persona => `el nombre es ${persona.nombre} la edad ${persona.edad}`)
+	// const imprimirArray = (array)=>array.map(persona => `el nombre es ${persona.nombre} la edad ${persona.edad}`)
 
-	console.log(imprimirArray(personas))
+	// console.log(imprimirArray(personas))
+
+	// Entiendo los clousures en javascript 
+
+	function saludarFamilia(apellido) {
+		return function saludarmiembro(nombre){
+			console.log(`hola ${nombre} ${apellido}`)
+		}
+	}
+
+	const saludarSuarez = saludarFamilia('suarez')
+	const saludarRojas = saludarFamilia('rojas')
+
+	saludarSuarez('joel')
+	saludarRojas('Boris')
 
 
 
