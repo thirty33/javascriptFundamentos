@@ -73,36 +73,66 @@
 
 	// inventando idiomas 
 
-	function platzoom(str) {
-		let translation = str
+	// function platzoom(str) {
+	// 	let translation = str
 
-		translation = translation.toLowerCase().endsWith('ar') ? translation.slice(0,-2) : translation 
+	// 	translation = translation.toLowerCase().endsWith('ar') ? translation.slice(0,-2) : translation 
 
-		translation = translation.toLowerCase().startsWith('z') ? `${translation}pe` : translation
+	// 	translation = translation.toLowerCase().startsWith('z') ? `${translation}pe` : translation
 
 		
 
-		// si tiene 10 o mas letras se debe partir a la mitad y unir con un guion en el medio
+	// 	// si tiene 10 o mas letras se debe partir a la mitad y unir con un guion en el medio
 
-		const length = translation.length
-		const half = Math.round(length/2)
+	// 	const length = translation.length
+	// 	const half = Math.round(length/2)
 
-		translation = length >= 10 ? `${translation.slice(0,half)} - ${translation.slice(half)}}` : translation 
+	// 	translation = length >= 10 ? `${translation.slice(0,half)} - ${translation.slice(half)}}` : translation 
 
 
-		const reverse = str => str.toLowerCase().split('').reverse().join('')
-		const minMay = str => str.split('').map(c => str.indexOf(c) % 2 == 0 ? c.toUpperCase() : c.toLowerCase()).join('')
+	// 	const reverse = str => str.toLowerCase().split('').reverse().join('')
+	// 	const minMay = str => str.split('').map(c => str.indexOf(c) % 2 == 0 ? c.toUpperCase() : c.toLowerCase()).join('')
 
-		translation = str == reverse(str) ? minMay(str) : translation
+	// 	translation = str == reverse(str) ? minMay(str) : translation
 
-		return translation
+	// 	return translation
 		
+	// }
+
+	// console.log(platzoom('programar'))
+	// console.log(platzoom('Zorro'))
+	// console.log(platzoom('jijijijiji'))
+	// console.log(platzoom('arepera'))
+
+	const sasha = 'sasha'
+	const dias = [
+		"lunes",
+		"martes",
+		"miercoles",
+		"jueves",
+		"viernes",
+		"sabado",
+		"domingo",
+	]
+
+	const correr = () => Math.round(Math.random() * (10)) + 5
+		
+	let totalkm = 0	
+
+	for (let i=0; i<dias.length; i++){
+		const km = correr()
+		totalkm += km
+		console.log(`el dia ${dias[i]} `)
 	}
 
-	console.log(platzoom('programar'))
-	console.log(platzoom('Zorro'))
-	console.log(platzoom('jijijijiji'))
-	console.log(platzoom('arepera'))
+	console.log(`corrio ${totalkm} kilometros`)
+
+	const prom = totalkm/dias.length
+	console.log(` el promedio es ${prom.toFixed(2)}`)
+
+
+
+
 
 
 
