@@ -223,31 +223,31 @@
 
 	// }
 
-	class punto {
-		constructor(x,y) {
-			this.x = x	
-			this.y = y
-		}
+	// class punto {
+	// 	constructor(x,y) {
+	// 		this.x = x	
+	// 		this.y = y
+	// 	}
 
-		moverEnX(x) {
-			this.x += x
-		}
+	// 	moverEnX(x) {
+	// 		this.x += x
+	// 	}
 	
-		moverEnY(y) {
-			this.y += y
-		}
+	// 	moverEnY(y) {
+	// 		this.y += y
+	// 	}
 
-		distancia(p) {
-			const y = this.y - p.y
-			const x = this.x - p.x
+	// 	distancia(p) {
+	// 		const y = this.y - p.y
+	// 		const x = this.x - p.x
 
 
-			return Math.sqrt(Math.pow(x,2) + Math.pow(y,2))
-		}
-	}
+	// 		return Math.sqrt(Math.pow(x,2) + Math.pow(y,2))
+	// 	}
+	// }
 
-	const p1 = new punto(0,4)
-	const p2 = new punto(3,0)
+	// const p1 = new punto(0,4)
+	// const p2 = new punto(3,0)
 
 
 	
@@ -255,15 +255,19 @@
 	// let p2 = punto.init(2,6)
 
 
-	console.log(`la cordenadas del punto1 son ${p1.x} y ${p1.y}`)
-	console.log(`la cordenadas del punto2 son ${p2.x} y ${p2.y}`)
+	// console.log(`la cordenadas del punto1 son ${p1.x} y ${p1.y}`)
+	// console.log(`la cordenadas del punto2 son ${p2.x} y ${p2.y}`)
 
 
-		
+	function SaludarJoel() {
+		const nombre = 'joel'
 
+		for(let i=0; i<10; i++ ){
+			console.log('hola' + " " + nombre)
+		}
+	}
 
-
-
+	SaludarJoel()
 
 	
 	
