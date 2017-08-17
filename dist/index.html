@@ -132,6 +132,49 @@
 
 
 
+	// pelea goku y superman
+
+	let vidaGoku = 100
+	let vidaSuperman = 100
+	let round = 1
+
+	const minPower = 5
+	const maxPower = 12 
+
+	const ambosSiguenVivos = () => vidaGoku > 0 && vidaSuperman > 0
+
+	const randomAtack = () => Math.round(Math.random() * (maxPower - minPower) + minPower)
+
+	const comenzarPelea = () => {
+
+		let turno = 0 	
+		while(ambosSiguenVivos()) {
+			turno++
+			perdidaGoku = randomAtack()
+			perdidaSuperman = randomAtack()
+
+			vidaGoku -= perdidaGoku
+			vidaSuperman -= perdidaSuperman
+
+
+
+
+		}
+
+
+		if(vidaSuperman > 0 && vidaGoku < 0){
+			return 'gano Superman'
+		}
+		else {
+			return 'gano Goku'
+		}
+
+	}
+
+	console.log(comenzarPelea())
+
+
+
 
 
 
