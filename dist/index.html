@@ -104,79 +104,123 @@
 	// console.log(platzoom('jijijijiji'))
 	// console.log(platzoom('arepera'))
 
-	const sasha = 'sasha'
-	const dias = [
-		"lunes",
-		"martes",
-		"miercoles",
-		"jueves",
-		"viernes",
-		"sabado",
-		"domingo",
-	]
+	// const sasha = 'sasha'
+	// const dias = [
+	// 	"lunes",
+	// 	"martes",
+	// 	"miercoles",
+	// 	"jueves",
+	// 	"viernes",
+	// 	"sabado",
+	// 	"domingo",
+	// ]
 
-	const correr = () => Math.round(Math.random() * (10)) + 5
+	// const correr = () => Math.round(Math.random() * (10)) + 5
 		
-	let totalkm = 0	
+	// let totalkm = 0	
 
-	for (let i=0; i<dias.length; i++){
-		const km = correr()
-		totalkm += km
-		console.log(`el dia ${dias[i]} `)
+	// for (let i=0; i<dias.length; i++){
+	// 	const km = correr()
+	// 	totalkm += km
+	// 	console.log(`el dia ${dias[i]} `)
+	// }
+
+	// console.log(`corrio ${totalkm} kilometros`)
+
+	// const prom = totalkm/dias.length
+	// console.log(` el promedio es ${prom.toFixed(2)}`)
+
+
+
+	// // pelea goku y superman
+
+	// let vidaGoku = 100
+	// let vidaSuperman = 100
+	// let round = 1
+
+	// const minPower = 5
+	// const maxPower = 12 
+
+	// const ambosSiguenVivos = () => vidaGoku > 0 && vidaSuperman > 0
+
+	// const randomAtack = () => Math.round(Math.random() * (maxPower - minPower) + minPower)
+
+	// const comenzarPelea = () => {
+
+	// 	let turno = 0 	
+	// 	while(ambosSiguenVivos()) {
+	// 		turno++
+	// 		perdidaGoku = randomAtack()
+	// 		perdidaSuperman = randomAtack()
+
+	// 		vidaGoku -= perdidaGoku
+	// 		vidaSuperman -= perdidaSuperman
+
+
+
+
+	// 	}
+
+
+	// 	if(vidaSuperman > 0 && vidaGoku < 0){
+	// 		return 'gano Superman'
+	// 	}
+	// 	else {
+	// 		return 'gano Goku'
+	// 	}
+
+	// }
+
+	// console.log(comenzarPelea())
+
+
+	function Punto(x,y) {
+		this.x = x
+		this.y = y
+
 	}
 
-	console.log(`corrio ${totalkm} kilometros`)
+	Punto.prototype.moverEnX = function moverEnX(x){
+		this.x += x
+	} 
 
-	const prom = totalkm/dias.length
-	console.log(` el promedio es ${prom.toFixed(2)}`)
+	Punto.prototype.moverEnY = function moverEnY(y){
+			this.y += y
+	} 
 
+	Punto.prototype.distancia = function distancia(p){
 
-
-	// pelea goku y superman
-
-	let vidaGoku = 100
-	let vidaSuperman = 100
-	let round = 1
-
-	const minPower = 5
-	const maxPower = 12 
-
-	const ambosSiguenVivos = () => vidaGoku > 0 && vidaSuperman > 0
-
-	const randomAtack = () => Math.round(Math.random() * (maxPower - minPower) + minPower)
-
-	const comenzarPelea = () => {
-
-		let turno = 0 	
-		while(ambosSiguenVivos()) {
-			turno++
-			perdidaGoku = randomAtack()
-			perdidaSuperman = randomAtack()
-
-			vidaGoku -= perdidaGoku
-			vidaSuperman -= perdidaSuperman
+		const x = this.x - p.x
+		const y = this.y - p.y
 
 
-
-
-		}
-
-
-		if(vidaSuperman > 0 && vidaGoku < 0){
-			return 'gano Superman'
-		}
-		else {
-			return 'gano Goku'
-		}
-
+		return Math.sqrt(Math.pow(x,2) + Math.pow(y,2))
 	}
 
-	console.log(comenzarPelea())
+	
+
+	const p1 = new Punto(0,4)
+	const p2 = new Punto(3,0)
+	
+
+	console.log(p1.distancia(p2))
+	console.log(p2.distancia(p1))
+
+	p1.moverEnX(10)
+	console.log(p1.distancia(p2))
+	p2.moverEnY(-4)
+	console.log(p1.distancia(p2))
+
+	
 
 
 
 
 
+	
+	
+
+	
 
 
 
