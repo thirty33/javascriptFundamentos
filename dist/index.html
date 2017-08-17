@@ -174,42 +174,64 @@
 	// console.log(comenzarPelea())
 
 
-	function Punto(x,y) {
-		this.x = x
-		this.y = y
+	// function Punto(x,y) {
+	// 	this.x = x
+	// 	this.y = y
 
-	}
+	// }
 
-	Punto.prototype.moverEnX = function moverEnX(x){
-		this.x += x
-	} 
+	// Punto.prototype.moverEnX = function moverEnX(x){
+	// 	this.x += x
+	// } 
 
-	Punto.prototype.moverEnY = function moverEnY(y){
-			this.y += y
-	} 
+	// Punto.prototype.moverEnY = function moverEnY(y){
+	// 		this.y += y
+	// } 
 
-	Punto.prototype.distancia = function distancia(p){
+	// Punto.prototype.distancia = function distancia(p){
 
-		const x = this.x - p.x
-		const y = this.y - p.y
+	// 	const x = this.x - p.x
+	// 	const y = this.y - p.y
 
 
-		return Math.sqrt(Math.pow(x,2) + Math.pow(y,2))
-	}
+	// 	return Math.sqrt(Math.pow(x,2) + Math.pow(y,2))
+	// }
 
 	
 
-	const p1 = new Punto(0,4)
-	const p2 = new Punto(3,0)
+	const punto = {
+		init: function init(x,y) {
+			let obj =Object.create(this)
+			obj.x = x
+			obj.y = y
+			return obj
+
+		},
+		moverEnX: function moverEnX(x) {
+			this.x += x 
+		},
+		moverEnY: function moverEnX(y) {
+			this.y += y 
+		},
+		distancia: function distancia(p) {
+			const x = this.x - p.x
+			const y = this.y - p.y
+
+
+			return Math.sqrt(Math.pow(x,2) + Math.pow(y,2))
+		},
+
+	}
+
+	// const p1 = new Punto(0,4)
+	// const p2 = new Punto(3,0)
 	
+	let p1 = punto.init(1,4)
+	let p2 = punto.init(2,6)
 
-	console.log(p1.distancia(p2))
-	console.log(p2.distancia(p1))
 
-	p1.moverEnX(10)
-	console.log(p1.distancia(p2))
-	p2.moverEnY(-4)
-	console.log(p1.distancia(p2))
+	console.log(`la cordenadas del punto1 son ${p1.x} y ${p1.y}`)
+	console.log(`la cordenadas del punto2 son ${p2.x} y ${p2.y}`)
 
 	
 
