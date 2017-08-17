@@ -352,6 +352,19 @@
 	saludarRojas('Boris')
 
 
+	// function makePrefixer(prefixer) {
+	// 	return function palabra(word){
+	// 		console.log(`${prefixer}${word}`)
+	// 	}
+	// }
+
+	const makePrefixer = (prefixer) => (word)=>console.log(`${prefixer}${word}`)
+
+	const prefixerRe = makePrefixer('re')
+	prefixerRe('bueno')
+	const prefixerIn = makePrefixer('in')
+	prefixerIn('creible')
+
 
 	</script>
 </body>
