@@ -259,23 +259,83 @@
 	// console.log(`la cordenadas del punto2 son ${p2.x} y ${p2.y}`)
 
 
-	function SaludarJoel() {
-		const nombre = 'joel'
+	// function SaludarJoel() {
+	// 	const nombre = 'joel'
 
-		for(let i=0; i<10; i++ ){
-			console.log('hola' + " " + nombre)
+	// 	for(let i=0; i<10; i++ ){
+	// 		console.log('hola' + " " + nombre)
+	// 	}
+	// }
+
+	// SaludarJoel()
+
+	
+	// function suma(...numeros) {
+	// 	// console.log(numeros)
+	// 	let acum = 0;
+	// 	// for(let i=0; i<numeros.length; i++){
+	// 	// 	acum += numeros[i]
+
+	// 	// }
+
+
+
+	// 	return numeros.reduce(function(acum, numero){
+	// 		acum+= numero
+	// 		return acum
+	// 	}, 0)
+		
+	// }
+
+	// function dobles(...numeros) {
+	// 	// const resultado = []
+	// 	// for (let i = 0; i<numeros.length; i++){
+	// 	// 	resultado.push(numeros[i]*2)
+	// 	// }
+	// 	// return resultado
+
+	// 	numeros.map(numero => numero * 2)
+		
+	// }
+
+	// const dobles = (...numeros)=> numeros.map(numero => numero*2)
+
+	// const pares = (...numeros)=>numeros.filter(numero => numero%2==0)
+
+	// const imPares = (...numeros)=>numeros.filter(numero => numero%2!=0)
+
+
+	// console.log(suma(3,4,5,7))
+	// console.log(dobles(3,4,5,7))
+	// console.log(pares(3,4,5,7))
+	// console.log(imPares(3,4,5,7))
+	
+
+
+	
+
+	class persona {
+		constructor (nombre, edad){
+			this.nombre = nombre
+			this.edad = edad
 		}
+
 	}
 
-	SaludarJoel()
-
-	
-	
-
+	const carlos = new persona('carlos', 14)
+	const maria = new persona('maria', 17)
+	const juana = new persona('juana', 20)
 	
 
+	const personas = new Array()
 
+	personas.push(carlos)
+	personas.push(maria)
+	personas.push(juana)
 
+	const imprimirArray = (array)=>array.map(persona => `el nombre es ${persona.nombre} la edad ${persona.edad}`)
+
+	console.log(imprimirArray(personas))
 
 
 
