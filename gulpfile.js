@@ -42,6 +42,9 @@ gulp.task('watch', function(){
 	gulp.watch('./dist/*.html').on('change', function(){
 		browserSync.reload()
 	})
+	gulp.watch('./dist/*.js').on('change', function(){
+		browserSync.reload()
+	})
 
 
 })

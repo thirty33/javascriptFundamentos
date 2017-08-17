@@ -339,17 +339,17 @@
 
 	// Entiendo los clousures en javascript 
 
-	function saludarFamilia(apellido) {
-		return function saludarmiembro(nombre){
-			console.log(`hola ${nombre} ${apellido}`)
-		}
-	}
+	// function saludarFamilia(apellido) {
+	// 	return function saludarmiembro(nombre){
+	// 		console.log(`hola ${nombre} ${apellido}`)
+	// 	}
+	// }
 
-	const saludarSuarez = saludarFamilia('suarez')
-	const saludarRojas = saludarFamilia('rojas')
+	// const saludarSuarez = saludarFamilia('suarez')
+	// const saludarRojas = saludarFamilia('rojas')
 
-	saludarSuarez('joel')
-	saludarRojas('Boris')
+	// saludarSuarez('joel')
+	// saludarRojas('Boris')
 
 
 	// function makePrefixer(prefixer) {
@@ -358,14 +358,18 @@
 	// 	}
 	// }
 
-	const makePrefixer = (prefixer) => (word)=>console.log(`${prefixer}${word}`)
+	// const makePrefixer = (prefixer) => (word)=>console.log(`${prefixer}${word}`)
 
-	const prefixerRe = makePrefixer('re')
-	prefixerRe('bueno')
-	const prefixerIn = makePrefixer('in')
-	prefixerIn('creible')
+	// const prefixerRe = makePrefixer('re')
+	// prefixerRe('bueno')
+	// const prefixerIn = makePrefixer('in')
+	// prefixerIn('creible')
+
+
+
 
 
 	</script>
+	<script src="tablero.js"></script>
 </body>
 </html>
