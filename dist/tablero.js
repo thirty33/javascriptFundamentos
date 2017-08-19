@@ -485,3 +485,63 @@ function saludar(veces, uppercase) {
 // saludar.apply(persona, [3,true])
 const param = [3,true]
 saludar.call(persona,...param)
+
+
+
+// Programa que devuelve la media de un objeto
+
+function contar() {
+	this.sum = 0
+	this.cont = 0
+}
+
+contar.prototype.add = function(array) {
+	array.forEach(function(num) {
+		this.sum += num
+		++this.cont
+	}.bind(this))
+}
+
+var obj = new contar()
+obj.add([2,5,9])
+console.log('este es el contador' ,obj.cont)
+console.log('este es la suma',obj.sum)
+
+// otra manera de hacerlo
+
+
+var contar = {
+	suma: 0,
+	cont: 0,
+	
+}
+
+function agregar(array){
+	array.forEach( function(index) {
+		console.log('entra al forEach')
+		this.suma += index
+		++this.cont	
+	},this)
+
+	console.log(`la suma total es ${this.suma}`)
+}
+
+
+agregar.call(contar, [5,10,56,7])
+console.log('este es el valor de contar.sum', contar.suma)
+console.log('este es el valor de contar.cont', contar.cont)
+
+
+
+// Explicacion de ejecucion de codigo,
+// javascript ejecuta una sola cosa 
+
+
+console.log('hola')
+
+setTimeout(function (){
+	console.log('medio')
+
+},0 )
+
+console.log('chau')
