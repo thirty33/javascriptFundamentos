@@ -545,3 +545,14 @@ setTimeout(function (){
 },0 )
 
 console.log('chau')
+
+
+// 
+
+setTimeout(function callback(){
+	console.log("ya paso 3 segundo")}
+	, 1000)
+
+
+
+console.log('hola')

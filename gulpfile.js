@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var postcss = require('gulp-postcss')
 var browserSync = require('browser-sync').create()
+var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest
 
 
 
