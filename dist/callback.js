@@ -74,14 +74,32 @@ function _handError(err){
 // })
 
 let luke
-get('https://swapi.co/api/people/1')
-  .then((response)=> {
-    luke = response
-      return get(luke.homeworld)
+let page = 1
+// get(`https://swapi.co/api/people/${page}`)
+//   .then((response)=> {
+//     luke = response
+//       return get(luke.homeworld)
+//   })
+//   .then((homeworld) =>{
+//     luke.homeworld = homeworld
+//     console.log(`${luke.name} nacio en ${luke.homeworld.name}`)
+
+//   })
+//   .catch(err => _handError(err))
+
+// otra forma con funcion fetch
+
+fetch(`https://swapi.co/api/people/${page}`)
+  .then(response => response.json()) 
+  .then((json)=> {
+    luke = json
+      return fetch(luke.homeworld)
   })
-  .then((homeworld) =>{
-    luke.homeworld = homeworld
+  .then(response => response.json())
+  .then((json) => {
+    luke.homeworld = json
     console.log(`${luke.name} nacio en ${luke.homeworld.name}`)
 
   })
   .catch(err => _handError(err))
+
