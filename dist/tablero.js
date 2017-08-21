@@ -556,3 +556,82 @@ setTimeout(function callback(){
 
 
 console.log('hola')
+
+
+// funciones recursivas
+
+// secuencia de numeros fibonacci
+
+
+console.log('secuencia fibonacci')
+
+const numerosSecuencia = new Array(0)
+
+
+function mostrar(array){
+	array.forEach((item,index)=>{
+		console.log(`${item} en la pos ${index}`)
+	})
+}
+
+function fibonacci(array){
+	const ult = array[array.length-1]
+	const penUlt = array[array.length-2]
+	const suma = ult + penUlt
+
+	return array.push(suma)
+
+}
+
+function suma(nVeces,array){
+
+	for(let i=0; i<nVeces; i++){
+		fibonacci(array)
+	}
+}
+
+
+function retornarIndex(array,num){
+	let pos = 0
+	array.forEach(function(item,index){
+			++pos
+			console.log(`este es el index ${index}`)
+			if(array[item] == num) {
+				console.log(`entra en el index ${index}`)
+				console.log(`esto es pos ${pos-1}`)
+				return (pos-1) 
+			}else
+			 return'no existe el numero'
+			})
+}
+
+
+function fiboRecursivo(num) {
+	if(num == 1) return 0 
+	if(num ==2) return 1
+
+	return fiboRecursivo(num-1) + fiboRecursivo(num-2) 
+}
+
+function fibonacciArray(num, array ={}){
+	if(array[num]) return array[num]
+	if(num == 1) return 0 
+	if(num ==2) return 1
+	
+	return array[num] = fibonacciArray(num-1, array) + fibonacciArray(num-2,array) 
+
+}
+
+numerosSecuencia.push(0)
+numerosSecuencia.push(1)
+suma(16, numerosSecuencia)
+console.log(mostrar(numerosSecuencia))
+
+// console.log(`en la posicision 5 esta ${retornarIndex(numerosSecuencia,5)}`)
+
+
+console.log(`fiboRecursivo en pos 5 es ${fiboRecursivo(5)}`)
+
+
+
+
