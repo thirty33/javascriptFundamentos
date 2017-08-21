@@ -719,6 +719,23 @@ function* idMaker() {
 // var map3 = map1.set(‘b’, 50); 
 // assert(map1.equals(map3) === false);
 
+var joel = {edad:2}
+var carlos = joel
+
+
+function cumple(object)
+{
+	const clone = Object.assign({},object)	
+	clone.edad++
+	return clone
+}
+
+
+
+const clone = cumple(carlos)
+
+console.log(`edad de joel ${joel.edad}`)
+console.log(`edad de carlos ${clone.edad}`)
 
 
 
