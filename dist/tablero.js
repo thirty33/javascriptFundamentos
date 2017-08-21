@@ -636,15 +636,48 @@ console.log(`fiboRecursivo en pos 5 es ${fiboRecursivo(5)}`)
 
 // fibonacci con iteradores en javascript
 
-function fibonacciIterator() {
+// function fibonacciIterator() {
+// 	let a=0, b=1
+
+// 	return {
+// 		next: function (reset){
+// 			if(reset) a=0, b=0
+// 			let f = a
+// 			a = b
+// 			b = f + a 
+// 			return {value: f, done:false}
+// 		}
+// 	}
+// }
+
+// const fibo = {}
+// fibo[Symbol.iterator] = fibonacciIterator
+
+// let i = 0
+// for(let value of fibo) {
+// 	console.log('el valor es', value)
+// 	i++
+// 	if(i>20) break
+// }
+
+
+//generadores
+
+function* fibonacciIterator() {
 	let a=0, b=1
+
+
+	while(true) {
+
+		let f = a
+		a = b
+		b = f + a 
+		let reset = yield f 
+		if(reset) a=0, b=1
+	}	
 
 	return {
 		next: function (reset){
-			if(reset) a=0, b=0
-			let f = a
-			a = b
-			b = f + a 
 			return {value: f, done:false}
 		}
 	}
@@ -659,6 +692,33 @@ for(let value of fibo) {
 	i++
 	if(i>20) break
 }
+
+
+
+// generadores ejemplo 2
+
+function* idMaker() {
+	    var index = 0;
+	    while(true)
+	        yield index++;
+	}
+
+	var gen = idMaker(); // "Generator { }"
+
+	console.log(gen.next().value); // 0
+	console.log(gen.next().value); // 1
+	console.log(gen.next().value); // 2
+	// ...
+
+
+// inmutabilidad 
+
+// var map1 = Immutable.Map({a:1, b:2, c:3});
+// var map2 = map1.set(‘b’, 2); 
+// assert(map1.equals(map2) === true); 
+// var map3 = map1.set(‘b’, 50); 
+// assert(map1.equals(map3) === false);
+
 
 
 
