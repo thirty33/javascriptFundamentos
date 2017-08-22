@@ -6,6 +6,7 @@ var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest
 
 
 
+
 gulp.task('serv', function () {
 	browserSync.init({
 		server: {
